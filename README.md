@@ -51,7 +51,7 @@ Here are the upcoming features for the development of mdcx:
 
 - Markdown:
   - [ ] Heading links
-  - [ ] Tables
+  - [x] Tables
 - Quality-of-life
   - [ ] Support `#` titles as well as the current yml titles
   - [ ] Support a basic version of TOML `+++` metadata
