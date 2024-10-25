@@ -7,24 +7,36 @@ Seamless markdown to docx converter.
 Command-line:
 
 ```shell
-$ mdcx hippo.md hippo.docx
+$ poetry run python main.py examples/test.md test.docx
 ```
 
 In Python:
 
 ```python
-from mdcx import Document
+from pathlib import Path
+from src.document import Document
+from src.styles import Style
 
-doc = Document("Markdown here!")
-doc.save("example.docx")
+# 从文件读取 Markdown 内容
+md_path = Path("path/to/your/markdown/file.md")
+with open(md_path, "r", encoding="utf-8") as file:
+    md_content = file.read()
+
+# 创建 Document 对象
+style = Style.andy()  # 或者使用 Style.foxtrot()
+doc = Document(md_path, style)
+
+# 保存为 docx 文件
+output_path = Path("output.docx")
+doc.save(output_path)
 ```
 
 ## Installation
 
-To install mdcx, simply download it from PyPI:
-
+### Init
 ```shell
-$ pip3 install mdcx
+$ pip install poetry
+$ poetry install
 ```
 
 ## Showcase
